@@ -4,7 +4,7 @@
     PATH: "/nix/var/nix/profiles/default/bin/:{{ lookup('env', 'PATH') }}"
   vars:
     personal: "{{ lookup('env', 'HOME') }}/personal"
-    username: root
+    username: solomon
 
   pre_tasks:
   - name: Update Apt

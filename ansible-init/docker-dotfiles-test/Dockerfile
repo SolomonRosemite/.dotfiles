@@ -11,10 +11,9 @@ RUN apt-get update && \
     apt-get autoremove --yes
 
 FROM base AS final
-# RUN useradd -m root && echo "root:root" | chpasswd && adduser root sudo
-USER root
-# WORKDIR /home/root
-WORKDIR /root
+RUN useradd -m solomon && echo "solomon:mypass" | chpasswd && adduser solomon sudo
+USER solomon
+WORKDIR /home/solomon
 
 FROM final
 COPY . .
