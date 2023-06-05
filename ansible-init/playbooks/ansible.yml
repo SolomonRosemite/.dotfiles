@@ -1,0 +1,22 @@
+- hosts: localhost
+  become: yes
+  environment:
+    PATH: "{{ lookup('env', 'HOME') }}/.nix-profile/bin/:{{ lookup('env', 'PATH') }}"
+  vars:
+    personal: "{{ lookup('env', 'HOME') }}/personal"
+    username: root
+
+  pre_tasks:
+  - name: Update Apt
+    become: true
+    apt:
+      force_apt_get: true
+      update_cache: true
+      state: present
+    tags:
+      - install
+      - core
+
+  tasks:
+    - import_tasks: tasks/zsh-setup.yml
+
