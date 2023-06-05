@@ -18,8 +18,12 @@ else
     echo "Nix already installed. Skipping installation..."
 fi
 
+ls /nix/var/nix/profiles/default/bin/
+ls /nix/var/nix/profiles/default/bin/
+ls /nix/var/nix/profiles/default/bin/
+
 sudo ansible-galaxy install -r playbooks/requirements.yml --roles-path=/etc/ansible/roles
 sudo ansible-playbook playbooks/ansible.yml
 
-PATH=$HOME/.nix-profile/bin:$PATH
+PATH=/nix/var/nix/profiles/default/bin/:$PATH
 zsh

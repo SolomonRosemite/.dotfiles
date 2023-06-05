@@ -1,7 +1,7 @@
 - hosts: localhost
   become: yes
   environment:
-    PATH: "{{ lookup('env', 'HOME') }}/.nix-profile/bin/:{{ lookup('env', 'PATH') }}"
+    PATH: "/nix/var/nix/profiles/default/bin/:{{ lookup('env', 'PATH') }}"
   vars:
     personal: "{{ lookup('env', 'HOME') }}/personal"
     username: root
