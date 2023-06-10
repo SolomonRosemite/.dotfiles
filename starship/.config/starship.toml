@@ -1,0 +1,89 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$all$fill$cmd_duration$time$line_break$username$directory$character'
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "📉"
+
+[[battery.display]]
+threshold = 40
+style = "bold red"
+
+[character]
+error_symbol = "[✖](bold red) "
+success_symbol = '[➜](bold green)'
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = "took [$duration]($style) "
+
+[directory]
+truncation_length = 1
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[fill]
+symbol = ' '
+
+[git_branch]
+# format = "[$symbol$branch]($style) "
+# symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+ahead = ' ⇡$count'
+behind = ' ⇣$count'
+deleted = ' ❌$count'
+conflicted = ' ❌$count conflictes'
+modified = ' 📝$count'
+staged = ' +$count'
+stashed = ' 📦$count'
+untracked = ' ?$count'
+format = '([\[$all_status$ahead_behind \]]($style) )'
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+symbol = "💡"
+
+[package]
+disabled = true
+
+[python]
+# format = "[$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+# format = "[$symbol$version]($style) "
+style = "bold green"
+
+[time]
+time_format = "%R"
+format = "at $time($style) 🕙"
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = 'red bold'
+style_root = 'black bold'
+format = '[$user]($style) in '
+disabled = false
+show_always = true

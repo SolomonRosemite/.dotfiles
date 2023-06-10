@@ -1,22 +1,26 @@
 - hosts: localhost
-  become: yes
+  become: true
   environment:
-    PATH: "/nix/var/nix/profiles/default/bin/:{{ lookup('env', 'PATH') }}"
+    PATH: "/home/{{ username }}/.nix-profile/bin/:{{ lookup('env', 'PATH') }}"
   vars:
     personal: "{{ lookup('env', 'HOME') }}/personal"
     username: solomon
 
+  # Runs the playbook as this user
+  become_user: "{{ username }}"
+
   pre_tasks:
-  - name: Update Apt
-    become: true
-    apt:
-      force_apt_get: true
-      update_cache: true
-      state: present
-    tags:
-      - install
-      - core
+    - name: Update Apt
+      become: true
+      # become_user: root
+      apt:
+        force_apt_get: true
+        update_cache: true
+        state: present
+      tags:
+        - install
+        - core
 
   tasks:
-    - import_tasks: tasks/zsh-setup.yml
-
+    - import_tasks: tasks/core-setup.yml
+    - import_tasks: tasks/fish-setup.yml
