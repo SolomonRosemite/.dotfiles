@@ -1,8 +1,0 @@
-- name: Install Stow
-  shell: nix-env -iA nixpkgs.stow
-
-# - name: Stow dotfiles
-#   shell: cd ~/.dotfiles && stow */
-
-- name: Install utils
-  shell: nix-env -iA nixpkgs.util-linux
