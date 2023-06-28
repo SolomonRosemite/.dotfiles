@@ -25,12 +25,12 @@ alias home='cd /mnt/c/Users/TestUser/'
 alias vim='/usr/sbin/nvim'
 
 set fish_greeting ""
-
-set PATH $PATH:$HOME/.nix-profile/bin/
-set PATH $PATH:/usr/local/go/bin
+set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
+set -gx GOPATH "$HOME/.local/share/pnpm"
 
 # pnpm
-set -gx PNPM_HOME "/home/solomon/.local/share/pnpm"
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+# set -gx PNPM_HOME "/home/solomon/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
