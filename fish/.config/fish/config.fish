@@ -9,13 +9,12 @@ alias ck='cd /mnt/c/Users/TestUser/.config/komorebi/ && vim .'
 alias cw='cd /mnt/c/Users/TestUser/win.dotfiles/ && vim .'
 alias cy='cd /mnt/c/Users/TestUser/.yasb/ && vim .'
 
-alias d='sudo /usr/sbin/docker'
-alias dc='sudo /usr/sbin/docker compose'
-alias dcu='sudo /usr/sbin/docker compose up'
-alias dcud='sudo /usr/sbin/docker compose up -d'
-alias dcd='sudo /usr/sbin/docker compose down'
-alias dcl='sudo /usr/sbin/docker compose logs -f'
-alias docker='sudo /usr/sbin/docker'
+alias d='sudo docker'
+alias dc='sudo docker compose'
+alias dcu='sudo docker compose up'
+alias dcud='sudo docker compose up -d'
+alias dcd='sudo docker compose down'
+alias dcl='sudo docker compose logs -f'
 
 alias nvm='fnm'
 
@@ -23,6 +22,7 @@ alias h='cd /mnt/c/Users/TestUser/'
 alias home='cd /mnt/c/Users/TestUser/'
 
 alias vim='/usr/sbin/nvim'
+alias v='/usr/sbin/nvim .'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
