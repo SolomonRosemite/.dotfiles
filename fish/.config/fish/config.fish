@@ -26,7 +26,8 @@ alias vim='/usr/sbin/nvim'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
-set -gx GOPATH "$HOME/.local/share/pnpm"
+set fish_user_paths "$HOME/go/bin/" $fish_user_paths
+set -gx GOPATH "$HOME/go/"
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
