@@ -4,16 +4,17 @@
 format = '$all$fill$cmd_duration$time$line_break$username$directory$character'
 
 [battery]
-full_symbol = "🔋"
-charging_symbol = "⚡"
-discharging_symbol = "📉"
+disabled = true
+full_symbol = "🔋 "
+charging_symbol = "🔋 "
+discharging_symbol = "🪫 "
 
 [[battery.display]]
-threshold = 40
+threshold = 45
 style = "bold red"
 
 [character]
-error_symbol = "[✖](bold red) "
+error_symbol = '[✖](bold red)'
 success_symbol = '[➜](bold green)'
 
 [cmd_duration]
@@ -79,7 +80,7 @@ style = "bold green"
 time_format = "%R"
 format = "at $time($style) 🕙"
 style = "bright-white"
-disabled = false
+disabled = true
 
 [username]
 style_user = 'red bold'
