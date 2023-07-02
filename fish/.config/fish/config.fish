@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias c='~/.dotfiles/scripts/open_proj.sh'
+
+alias c.='cd ~/.dotfiles/ && vim .'
 alias cf='vim ~/.config/fish/config.fish'
 alias cs='vim ~/.config/starship.toml'
 alias cn='cd ~/.config/nvim/ && vim .'
