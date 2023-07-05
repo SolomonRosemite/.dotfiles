@@ -8,6 +8,7 @@ alias cf='vim ~/.config/fish/config.fish'
 alias cs='vim ~/.config/starship.toml'
 alias cn='cd ~/.config/nvim/ && vim .'
 alias ck='cd /mnt/c/Users/TestUser/.config/komorebi/ && vim .'
+alias ct='vim /mnt/c/Users/TestUser/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json'
 alias cw='cd /mnt/c/Users/TestUser/win.dotfiles/ && vim .'
 alias cy='cd /mnt/c/Users/TestUser/.yasb/ && vim .'
 
@@ -40,6 +41,7 @@ alias v='/usr/sbin/nvim .'
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
 set fish_user_paths "$HOME/go/bin/" $fish_user_paths
+set fish_user_paths "$HOME/.local/bin/" $fish_user_paths
 set -gx GOPATH "$HOME/go/"
 
 # pnpm
