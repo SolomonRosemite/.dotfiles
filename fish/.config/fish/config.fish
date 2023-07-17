@@ -20,7 +20,7 @@ alias dcd='sudo docker compose down'
 alias dcl='sudo docker compose logs -f'
 
 alias cc='~/.dotfiles/scripts/.config/scripts/open_proj.sh'
-alias c='code (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo)'
+alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && code . && cd -'
 alias cat='bat'
 alias grep='rg'
 alias l='exa -hl'
