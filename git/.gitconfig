@@ -1,0 +1,17 @@
+# Personal gitconfig
+[includeIf "gitdir:~/.dotfiles/"]
+  path = ~/dev/.gitconfig-personal
+[includeIf "gitdir:~/dev/"]
+  path = ~/dev/.gitconfig-personal
+[includeIf "gitdir:~/.config/nvim/"]
+  path = ~/dev/.gitconfig-personal
+[includeIf "gitdir:/mnt/c/Users/*/win.dotfiles/"]
+  path = ~/dev/.gitconfig-personal
+
+[includeIf "gitdir:~/work/"]
+  path = ~/work/.gitconfig-work
+
+[core]
+	editor = nvim
+[push]
+	autoSetupRemote = true
