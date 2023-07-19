@@ -1,2 +1,2 @@
 #!/bin/bash
-stow -—no-folding */
+stow --no-folding */
