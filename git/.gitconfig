@@ -8,6 +8,10 @@
 [includeIf "gitdir:/mnt/c/Users/*/win.dotfiles/"]
   path = ~/dev/.gitconfig-personal
 
+# Because of the way go get works, we also need to set this in the global gitconfig
+[includeIf "gitdir:~/go/"]
+  path = ~/work/.gitconfig-work
+
 [includeIf "gitdir:~/work/"]
   path = ~/work/.gitconfig-work
 
