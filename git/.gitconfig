@@ -17,5 +17,6 @@
 
 [core]
 	editor = nvim
+	pager = bat
 [push]
 	autoSetupRemote = true
