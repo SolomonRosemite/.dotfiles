@@ -2,21 +2,23 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set usernames "{Jesse,solomon}"
+
 # Open configurations
 alias c.='n. && vim .'
 alias cf='vim ~/.config/fish/config.fish'
 alias cs='vim ~/.config/starship.toml'
 alias cn='nn && vim .'
 alias ck='nk && vim .'
-alias ct='vim /mnt/c/Users/Jesse/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json'
+alias ct="vim /mnt/c/Users/$usernames/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json"
 alias cw='nw && vim .'
 alias cy='ny && vim .'
 
 alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
-alias nk='cd /mnt/c/Users/Jesse/.config/komorebi/'
-alias nw='cd /mnt/c/Users/Jesse/win.dotfiles/'
-alias ny='cd /mnt/c/Users/Jesse/.yasb/'
+alias nk="cd /mnt/c/Users/$usernames/.config/komorebi/"
+alias nw="cd /mnt/c/Users/$usernames/win.dotfiles/"
+alias ny="cd /mnt/c/Users/$usernames/.yasb/"
 
 alias d='sudo docker'
 alias dc='sudo docker compose'
@@ -38,8 +40,8 @@ alias nvm='fnm'
 alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr/sbin/rm -i'
 alias r='trash'
 
-alias h='cd /mnt/c/Users/Jesse/'
-alias home='cd /mnt/c/Users/Jesse/'
+alias h="cd /mnt/c/Users/$usernames/"
+alias home="cd /mnt/c/Users/$usernames/"
 
 alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
