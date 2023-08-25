@@ -5,14 +5,14 @@ end
 set usernames "{Jesse,solomon}"
 
 # Open configurations
-alias c.='n. && vim .'
+alias c.='n. && vim . && cd -'
 alias cf='vim ~/.config/fish/config.fish'
 alias cs='vim ~/.config/starship.toml'
-alias cn='nn && vim .'
-alias ck='nk && vim .'
+alias cn='nn && vim . && cd -'
+alias ck='nk && vim . && cd -'
 alias ct="vim /mnt/c/Users/$usernames/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json"
-alias cw='nw && vim .'
-alias cy='ny && vim .'
+alias cw='nw && vim . && cd -'
+alias cy='ny && vim . && cd -'
 
 alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
