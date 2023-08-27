@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set win_user_path (readlink -e /mnt/c/Users/{Jesse,solomon}/)
+set win_user_path (readlink -e /mnt/c/Users/{solomon,Jesse}/ | head -1)
 
 # Open configurations
 alias c.='n. && vim . && cd -'
