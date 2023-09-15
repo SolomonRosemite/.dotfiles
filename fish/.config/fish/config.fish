@@ -27,8 +27,9 @@ alias dcud='sudo docker compose up -d'
 alias dcd='sudo docker compose down'
 alias dcl='sudo docker compose logs -f'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo)'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && cd src > /dev/null 2>&1'
 alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && code .'
+
 alias cat='bat'
 alias copy='function __copy; cat $argv | clip.exe; end; __copy'
 alias clip='clip.exe'
@@ -55,6 +56,8 @@ set fish_user_paths "$HOME/go/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.local/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.cargo/bin/" $fish_user_paths
 set -gx GOPATH "$HOME/go/"
+
+
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
