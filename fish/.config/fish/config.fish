@@ -20,12 +20,19 @@ alias nk="cd $win_user_path/.config/komorebi/"
 alias nw="cd $win_user_path/win.dotfiles/"
 alias ny="cd $win_user_path/.yasb/"
 
-alias d='sudo docker'
-alias dc='sudo docker compose'
-alias dcu='sudo docker compose up'
-alias dcud='sudo docker compose up -d'
-alias dcd='sudo docker compose down'
-alias dcl='sudo docker compose logs -f'
+alias d='docker'
+alias dp='docker ps'
+
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs -f'
+alias dclf='docker compose logs -f'
+
+alias dv='docker volume'
+alias dvl='docker volume ls'
+alias dvr='docker volume rm'
 
 alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && cd src > /dev/null 2>&1'
 alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && code .'
@@ -42,6 +49,7 @@ alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr
 alias r='trash'
 
 alias h="cd $win_user_path/"
+alias hd="cd $win_user_path/Downloads"
 alias home="cd $win_user_path/"
 
 alias s='source ~/.config/fish/config.fish'
