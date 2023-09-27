@@ -6,6 +6,7 @@ set win_user_path (readlink -e /mnt/c/Users/{solomon,Jesse}/ | head -1)
 
 # Open configurations
 alias c.='n. && vim . && cd -'
+alias cb='vim ~/.config/bat/config'
 alias cf='vim ~/.config/fish/config.fish'
 alias cs='vim ~/.config/starship.toml'
 alias cn='nn && vim . && cd -'
