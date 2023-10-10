@@ -3,6 +3,8 @@ if status is-interactive
 end
 
 set win_user_path (readlink -e /mnt/c/Users/{solomon,Jesse}/ | head -1)
+set h $win_user_path
+set hd $win_user_path
 
 # Open configurations
 alias c.='n. && vim . && cd -'
@@ -23,6 +25,7 @@ alias ny="cd $win_user_path/.yasb/"
 
 alias d='docker'
 alias dp='docker ps'
+alias dr='docker remove'
 
 alias dc='docker compose'
 alias dcu='docker compose up'
@@ -49,9 +52,8 @@ alias nvm='fnm'
 alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr/sbin/rm -i'
 alias r='trash'
 
-alias h="cd $win_user_path/"
+alias d="cd $win_user_path/"
 alias hd="cd $win_user_path/Downloads"
-alias home="cd $win_user_path/"
 
 alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
