@@ -45,6 +45,7 @@ alias cat='bat'
 alias copy='function __copy; cat $argv | clip.exe; end; __copy'
 alias clip='clip.exe'
 alias grep='rg'
+alias gc='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
 alias l='exa -hl'
 alias ls='exa'
 
@@ -52,7 +53,7 @@ alias nvm='fnm'
 alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr/sbin/rm -i'
 alias r='trash'
 
-alias d="cd $win_user_path/"
+# alias d="cd $win_user_path/"
 alias hd="cd $win_user_path/Downloads"
 
 alias s='source ~/.config/fish/config.fish'
