@@ -38,7 +38,7 @@ alias dv='docker volume'
 alias dvl='docker volume ls'
 alias dvr='docker volume rm'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && cd src > /dev/null 2>&1'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo)'
 alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && code .'
 
 alias cat='bat'
