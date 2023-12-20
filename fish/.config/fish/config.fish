@@ -25,6 +25,7 @@ alias ny="cd $win_user_path/.yasb/"
 
 alias d='docker'
 alias dp='docker ps'
+alias ds='docker stop'
 alias dr='docker remove'
 
 alias dc='docker compose'
@@ -48,12 +49,12 @@ alias grep='rg'
 alias gc='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
 alias l='exa -hl'
 alias ls='exa'
+alias task='go-task'
 
 alias nvm='fnm'
 alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr/sbin/rm -i'
 alias r='trash'
 
-# alias d="cd $win_user_path/"
 alias hd="cd $win_user_path/Downloads"
 
 alias s='source ~/.config/fish/config.fish'
@@ -61,6 +62,7 @@ alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
 alias vim='/usr/sbin/nvim'
 alias v='/usr/sbin/nvim .'
+alias vv='/usr/sbin/nvim . -c "Copilot disable"'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
@@ -68,8 +70,6 @@ set fish_user_paths "$HOME/go/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.local/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.cargo/bin/" $fish_user_paths
 set -gx GOPATH "$HOME/go/"
-
-
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
@@ -79,3 +79,6 @@ end
 # pnpm end
 
 starship init fish | source
+
+# opam configuration
+source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
