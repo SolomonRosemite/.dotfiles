@@ -39,7 +39,7 @@ alias dv='docker volume'
 alias dvl='docker volume ls'
 alias dvr='docker volume rm'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo)'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && [ -f package.json ] || cd src > /dev/null 2>&1'
 alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && code .'
 
 alias cat='bat'
@@ -49,6 +49,7 @@ alias grep='rg'
 alias gc='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
 alias l='exa -hl'
 alias ls='exa'
+alias less='bat --paging=always'
 alias task='go-task'
 
 alias nvm='fnm'
