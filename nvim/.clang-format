@@ -1,1 +1,5 @@
 IndentWidth: 4
+---
+Language: Proto
+DisableFormat: true
+---
