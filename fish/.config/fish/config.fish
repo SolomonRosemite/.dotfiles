@@ -63,7 +63,7 @@ alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
 alias vim='/usr/sbin/nvim'
 alias v='/usr/sbin/nvim .'
-alias vv='/usr/sbin/nvim . -c "Copilot disable"'
+alias vv='/usr/sbin/nvim . -c "Codeium Disable"'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
