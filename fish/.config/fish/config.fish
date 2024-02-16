@@ -45,6 +45,7 @@ alias c='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && co
 alias cat='bat'
 alias copy='function __copy; cat $argv | clip.exe; end; __copy'
 alias clip='clip.exe'
+alias fj='~/.dotfiles/scripts/.config/scripts/format_json.sh'
 alias grep='rg'
 alias gc='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
 alias l='exa -hl'
