@@ -47,13 +47,13 @@ alias clip='clip.exe'
 alias fj='~/.dotfiles/scripts/.config/scripts/format_json.sh'
 alias grep='rg'
 alias gc='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
+alias jq='jq -C'
 alias l='exa -hl'
 alias ls='exa'
 alias less='bat --paging=always'
 alias task='go-task'
 
 alias nvm='fnm'
-alias rm='echo -e "Woahh, you are using rm instead of r!\nBe careful..." && /usr/sbin/rm -i'
 alias r='trash'
 
 alias hd="cd $win_user_path/Downloads"
