@@ -67,10 +67,10 @@ alias vv='/usr/sbin/nvim . -c "Codeium Disable"'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
-set fish_user_paths "$HOME/go/bin/" $fish_user_paths
+set fish_user_paths "$HOME/.go/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.local/bin/" $fish_user_paths
 set fish_user_paths "$HOME/.cargo/bin/" $fish_user_paths
-set -gx GOPATH "$HOME/go/"
+set -gx GOPATH "$HOME/.go/"
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"

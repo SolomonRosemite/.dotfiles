@@ -9,7 +9,7 @@
   path = ~/dev/.gitconfig-personal
 
 # Because of the way go get works, we also need to set this in the global gitconfig
-[includeIf "gitdir:~/go/"]
+[includeIf "gitdir:~/.go/"]
   path = ~/work/.gitconfig-work
 
 [includeIf "gitdir:~/work/"]
@@ -20,8 +20,8 @@
   dtt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\" -c \"Codeium Disable\""
 
 [core]
-	editor = nvim
-	pager = bat
+  editor = nvim
+  pager = bat
 
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
