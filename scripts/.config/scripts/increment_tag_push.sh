@@ -5,7 +5,7 @@ set -e
 echo "Pulling latest changes from origin..."
 git pull
 
-latest_tag=$(git describe --abbrev=0 --tags 2>/dev/null || echo "")
+latest_tag=$(git tag -l | sort -V | tail -n 1 2>/dev/null)
 
 # If there are no tags yet, start with 0.0.1
 if [ -z "$latest_tag" ]; then
