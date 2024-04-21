@@ -16,8 +16,16 @@ else
     minor="${version_parts[1]}"
     patch="${version_parts[2]}"
 
-    new_patch=$((patch + 1))
-    new_tag="$major.$minor.$new_patch"
+    if [[ "$1" == "--major" ]]; then
+        new_major=$((major + 1))
+        new_tag="$new_major.0.0"
+    elif [[ "$1" == "--minor" ]]; then
+        new_minor=$((minor + 1))
+        new_tag="$major.$new_minor.0"
+    else
+        new_patch=$((patch + 1))
+        new_tag="$major.$minor.$new_patch"
+    fi
 fi
 
 echo "Latest tag: $latest_tag"
