@@ -20,7 +20,7 @@ alias cy='ny && vim . && cd -'
 alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
 alias nk="cd $win_user_path/.config/komorebi/"
-alias nw="cd $win_user_path/win.dotfiles/"
+alias nw="cd $win_user_path/.win.dotfiles/"
 alias ny="cd $win_user_path/.yasb/"
 
 alias d='docker'
