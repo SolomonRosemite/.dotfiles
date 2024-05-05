@@ -39,7 +39,7 @@ alias dv='docker volume'
 alias dvl='docker volume ls'
 alias dvr='docker volume rm'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_proj.sh --only-echo) && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
 alias cat='bat'
 alias clip='utf8clip.exe'
