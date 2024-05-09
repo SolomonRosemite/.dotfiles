@@ -63,7 +63,7 @@ alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
 alias vim='/usr/sbin/nvim'
-alias v='/usr/sbin/nvim .'
+alias v='vv'
 alias vv='/usr/sbin/nvim . -c "Codeium Disable"'
 
 set fish_greeting ""
