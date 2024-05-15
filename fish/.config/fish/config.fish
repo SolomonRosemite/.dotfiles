@@ -41,6 +41,9 @@ alias dvr='docker volume rm'
 
 alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
+alias a='~/.dotfiles/scripts/.config/scripts/authy.sh'
+alias auth='~/.dotfiles/scripts/.config/scripts/authy.sh'
+alias authy='~/.dotfiles/scripts/.config/scripts/authy.sh'
 alias cat='bat'
 alias clip='utf8clip.exe'
 alias fj='~/.dotfiles/scripts/.config/scripts/format_json.sh'
