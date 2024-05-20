@@ -45,8 +45,8 @@ alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME
 
 alias gs='git status'
 alias gco='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
-alias gf='git fetch'
-alias gp='git pull'
+alias gpl='git pull'
+alias gp='git push'
 alias gl="git log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
 alias gls='sh ~/.dotfiles/scripts/.config/scripts/git_log.sh'
 alias gbc='sh ~/.dotfiles/scripts/.config/scripts/git_clear_branches.sh'
