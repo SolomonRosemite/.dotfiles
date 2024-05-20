@@ -15,12 +15,14 @@ alias cn='nn && vim . && cd -'
 alias ck='nk && vim . && cd -'
 alias ct="vim $win_user_path/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json"
 alias cw='nw && vim . && cd -'
+alias cws='nws && vim . && cd -'
 alias cy='ny && vim . && cd -'
 
 alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
 alias nk="cd $win_user_path/.config/komorebi/"
 alias nw="cd $win_user_path/.win.dotfiles/"
+alias nws="cd $win_user_path/AppData/Roaming/Microsoft/Windows/Start\ Menu/Programs/Startup/"
 alias ny="cd $win_user_path/.yasb/"
 
 alias d='docker'
