@@ -104,3 +104,4 @@ starship init fish | source
 # opam configuration
 source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 bash -c 'syncthing &>/dev/null &'
+export FZF_DEFAULT_OPTS='--layout=reverse'
