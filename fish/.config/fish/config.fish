@@ -47,7 +47,7 @@ alias gs='git status'
 alias gco='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
 alias gpl='git pull'
 alias gp='git push'
-alias gl="git log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias gl="git log --abbrev-commit --decorate --format=format:'%C(auto)%h %C(black)%C(bold)(%cr)%C(reset)%C(auto)%d %C(reset)%C(white)%s %C(dim white)- %an %C(reset)' --all"
 alias gls='sh ~/.dotfiles/scripts/.config/scripts/git_log.sh'
 alias gbc='sh ~/.dotfiles/scripts/.config/scripts/git_clear_branches.sh'
 
