@@ -11,14 +11,14 @@ function fshow() {
   DELIMITER="‣"
 
   while IFS=$DELIMITER read -r prefix tag suffix; do
-    if [[ $tag == *"tag:"* ]]; then
+    if [[ $tag == *"tag:"* && $tag != *"HEAD"* ]]; then
       tag="$EMPTYCHAR${tag/ /} "
     else
       tag="$tag$EMPTYCHAR"
     fi
     log="$prefix$tag$suffix"
     formatted_log+=$'\n'"$log"
-  done <<< "$(git log --color=always --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(auto)%s %C(dim white)- %an %C(reset)" "$@")"
+  done <<< "$(git log --color=always --all --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(auto)%s %C(dim white)- %an %C(reset)" "$@")"
 
   # remove first line
   formatted_log="${formatted_log#*$'\n'}"
