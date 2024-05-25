@@ -119,7 +119,7 @@ function git_commit_or_git_log
     end
 
     if test "$found_m" = "false"
-      sh ~/.dotfiles/scripts/.config/scripts/git_log.sh
+      sh ~/.dotfiles/scripts/.config/scripts/git_checkout.sh
     else
         eval $cmd
     end
