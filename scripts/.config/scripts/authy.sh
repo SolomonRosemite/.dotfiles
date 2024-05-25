@@ -32,9 +32,20 @@ if [[ $1 = "--save" ]]; then
     exit 0
 fi
 
-echo "Load from $file"
+delimiter="=========="
+pairs=$(cat "$file" | jq --arg delim "$delimiter" '.tokens.authenticator_tokens
+    |= map(.original_name = if .original_name == "" then .name else .original_name end) | .tokens.authenticator_tokens[] | "\(.original_name)\($delim)\(.name) -- \(.original_name)"' -r)
+item=$(echo "$pairs" | fzf --delimiter $delimiter --with-nth 2)
+
+if [[ ! -n "$item" ]]; then
+    echo "No item selected"
+    exit 1
+fi
+
+name=$(echo "$item" | sed "s/$delimiter.*//" | sed 's/ /%20/g')
+
+echo "Load authy TOTP credentials from $file"
 out=$(authy-export -load $file)
-out=$(echo $out )
 if [[ $1 = "--raw" ]]; then
     read -p "(WARNING) You choose the \"--raw\" option. Are you sure you want to display your secret keys? (y/n): " confirm
     if [[ $confirm =~ ^[Yy]$ ]]; then
@@ -45,20 +56,21 @@ if [[ $1 = "--raw" ]]; then
     exit 0
 fi
 
-secret=$(echo $out | tr " " "\n" |
-awk -F'[?&=]' '{
-    label = $1;
-    sub("otpauth://totp/", "", label);
-    for (i = 2; i <= NF; i++) {
-        if ($i == "secret") secret = $(i + 1);
-    }
-    print label " " secret;
-}' |
-fzf --with-nth 1 |
-awk '{
-    print $2;
-}')
+s=$(echo $out | tr " " "\n" | grep -i $name)
 
+re="[[:space:]]+"
+if [[ $s =~ $re ]]; then
+    echo "ambiguous selection. Please specify the name of the TOTP credential to use"
+    read -p "This will show your secrets as clear text. Are you sure you want to continue? (y/n): " confirm
+    if [[ $confirm =~ ^[Yy]$ ]]; then
+        s=$(echo $s | tr " " "\n" | fzf)
+    else
+        echo "canceled."
+        exit 1
+    fi
+fi
+
+secret=$(echo $s | sed 's/.*=//')
 if [[ ! -n "$secret" ]]; then
     echo "No item selected"
     exit 1
