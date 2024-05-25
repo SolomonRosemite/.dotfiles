@@ -44,7 +44,7 @@ alias dvr='docker volume rm'
 alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
 alias gs='git status'
-alias gco='~/.dotfiles/scripts/.config/scripts/git_checkout.sh'
+alias gc='git_commit_or_git_log'
 alias gpl='git pull'
 alias gp='git push'
 alias gl="git log --abbrev-commit --decorate --format=format:'%C(auto)%h %C(black)%C(bold)(%cr)%C(reset)%C(auto)%d %C(reset)%C(white)%s %C(dim white)- %an %C(reset)' --all"
@@ -56,7 +56,6 @@ alias gap='git add -p'
 alias gaa='git add -A'
 alias gdd='git diff'
 alias gdc='git diff --cached'
-alias gc='git commit -m'
 
 alias a='~/.dotfiles/scripts/.config/scripts/authy.sh'
 alias auth='~/.dotfiles/scripts/.config/scripts/authy.sh'
@@ -105,3 +104,23 @@ starship init fish | source
 source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 bash -c 'syncthing &>/dev/null &'
 export FZF_DEFAULT_OPTS='--layout=reverse'
+
+# functions
+function git_commit_or_git_log
+    set -l cmd "git commit"
+    set -l found_m false
+    for arg in $argv
+        if test "$arg" = "-m"
+            set cmd "$cmd -m"
+            set found_m true
+        else
+            set cmd "$cmd \"$arg\""
+        end
+    end
+
+    if test "$found_m" = "false"
+      sh ~/.dotfiles/scripts/.config/scripts/git_log.sh
+    else
+        eval $cmd
+    end
+end
