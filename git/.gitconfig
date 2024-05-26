@@ -5,7 +5,7 @@
   path = ~/dev/.gitconfig-personal
 [includeIf "gitdir:~/.config/nvim/"]
   path = ~/dev/.gitconfig-personal
-[includeIf "gitdir:/mnt/c/Users/*/win.dotfiles/"]
+[includeIf "gitdir:/mnt/c/Users/*/*win.dotfiles/"]
   path = ~/dev/.gitconfig-personal
 
 # Because of the way go get works, we also need to set this in the global gitconfig
