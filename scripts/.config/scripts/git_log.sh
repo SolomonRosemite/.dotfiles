@@ -5,13 +5,14 @@ parser_definition() {
   setup   REST help:usage -- "Usage: [options]" ''
   msg -- 'script for showing git log with fzf preview' ''
   msg -- 'Options:'
-  flag    ALLFLAG    -a --all                 -- "Show all branches. By default, only the current branch is shown."
-  disp    :usage     -h --help                -- "Display this help message and exit."
+  flag    ALLFLAG     -a --all                 -- "Show all branches. By default, only the current branch is shown."
+  flag    INTERACTIVE -i --interactive         -- "Run fzf in an interactive mode."
+  disp    :usage      -h --help                -- "Display this help message and exit."
 }
 eval "$(getoptions parser_definition) exit 1"
 
 function fshow() {
-  EMPTYCHAR="‎"
+  EMPTYCHAR="⠀"
   DELIMITER="‣"
   SHELL=bash
   ALL=""
@@ -28,10 +29,15 @@ function fshow() {
     fi
     log="$prefix$tag$suffix"
     formatted_log+=$'\n'"$log"
-  done <<< "$(git log --color=always $ALL --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(auto)%s %C(dim white)- %an %C(reset)" "$@")"
+  done <<< "$(git log --color=always $ALL --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(white)%s %C(dim white)- %an %C(reset)" "$@")"
 
   # remove first line
   formatted_log="${formatted_log#*$'\n'}"
+
+  if [[ ! $INTERACTIVE ]]; then
+    echo "$formatted_log"
+    exit
+  fi
 
   echo -e "$formatted_log" | fzf --delimiter="$EMPTYCHAR" --nth=1,3.. --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort --preview \
          'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
