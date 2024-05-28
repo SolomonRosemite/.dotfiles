@@ -44,11 +44,10 @@ alias dvr='docker volume rm'
 alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
 alias gs='git status'
-alias gc='git_commit_or_git_log'
+alias gc='git_commit_or_git_checkout'
 alias gpl='git pull'
 alias gp='git push'
-alias gl="git log --abbrev-commit --decorate --format=format:'%C(auto)%h %C(black)%C(bold)(%cr)%C(reset)%C(auto)%d %C(reset)%C(white)%s %C(dim white)- %an %C(reset)' --all"
-alias gls='sh ~/.dotfiles/scripts/.config/scripts/git_log.sh'
+alias gl='sh ~/.dotfiles/scripts/.config/scripts/git_log.sh -i'
 alias gbc='sh ~/.dotfiles/scripts/.config/scripts/git_clear_branches.sh'
 
 alias ga='git add'
@@ -106,7 +105,7 @@ bash -c 'syncthing &>/dev/null &'
 export FZF_DEFAULT_OPTS='--layout=reverse'
 
 # functions
-function git_commit_or_git_log
+function git_commit_or_git_checkout
     set -l cmd "git commit"
     set -l found_m false
     for arg in $argv
