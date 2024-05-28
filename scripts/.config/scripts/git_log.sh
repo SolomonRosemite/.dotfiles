@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 # Credit: https://github.com/exosyphon/dotfiles/blob/5d6e87a583ff1ac9d244daed26d379627cd04592/scripts/fshow.sh
 
-# Fuzzy search over Git commits
-# Enter will view the commit
-# Ctrl-o will checkout the selected commit
-SHELL=bash
+parser_definition() {
+  setup   REST help:usage -- "Usage: [options]" ''
+  msg -- 'script for showing git log with fzf preview' ''
+  msg -- 'Options:'
+  flag    ALLFLAG    -a --all                 -- "Show all branches. By default, only the current branch is shown."
+  disp    :usage     -h --help                -- "Display this help message and exit."
+}
+eval "$(getoptions parser_definition) exit 1"
+
 function fshow() {
-  formatted_log=""
   EMPTYCHAR="‎"
   DELIMITER="‣"
+  SHELL=bash
+  ALL=""
+  if [[ $ALLFLAG ]]; then
+    ALL="--all"
+  fi
 
+  formatted_log=""
   while IFS=$DELIMITER read -r prefix tag suffix; do
     if [[ $tag == *"tag:"* && $tag != *"HEAD"* ]]; then
       tag="$EMPTYCHAR${tag/ /} "
@@ -18,7 +28,7 @@ function fshow() {
     fi
     log="$prefix$tag$suffix"
     formatted_log+=$'\n'"$log"
-  done <<< "$(git log --color=always --all --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(auto)%s %C(dim white)- %an %C(reset)" "$@")"
+  done <<< "$(git log --color=always $ALL --format="%C(auto)%h$EMPTYCHAR%C(black)%C(bold)(%cr)%C(reset)$DELIMITER%C(auto)%d$DELIMITER%C(reset)%C(auto)%s %C(dim white)- %an %C(reset)" "$@")"
 
   # remove first line
   formatted_log="${formatted_log#*$'\n'}"
