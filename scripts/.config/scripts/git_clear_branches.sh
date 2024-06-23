@@ -1,23 +1,16 @@
 #!/usr/bin/env bash
 
-p=$(mktemp)
-git branch --merged | grep -v "\*" > $p
+branches=$(git fetch -p && git branch -vv | awk '/: gone]/{print $1}')
 
-if [ ! -s $p ]; then
-    echo "No branches found to clear. Exiting."
-    exit 1
+if [ -z "$branches" ]; then
+    echo "No branches to delete."
+    exit 0
 fi
 
-nvim $p
-if [ ! -s $p ]; then
-    echo "No branches found to clear. Exiting."
-    exit 1
-fi
-
-cat $p
+echo "$branches"
 read -p "Are you sure you would like to delete those branches? (y/n): " confirmation
 if [[ "$confirmation" =~ ^[Yy]$ ]]; then
-    xargs git branch -D < $p
+    echo "$branches" | xargs -n 1 git branch -D
     echo "Branches deleted."
 else
     echo "Deletion cancelled."
