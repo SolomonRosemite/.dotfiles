@@ -43,6 +43,10 @@ alias dvr='docker volume rm'
 
 alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
+alias ffd='_fzf_search_directory'
+alias ffh='_fzf_search_history'
+alias ffp='_fzf_search_processes'
+
 alias gs='git status'
 alias gc='git_commit_or_git_checkout'
 alias gpl='git pull'
