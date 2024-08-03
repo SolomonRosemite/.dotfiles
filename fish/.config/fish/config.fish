@@ -41,14 +41,16 @@ alias dv='docker volume'
 alias dvl='docker volume ls'
 alias dvr='docker volume rm'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/dev" "$HOME/work" "$HOME/personal") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/personal" "$HOME/dev" "$HOME/work/common/" "$HOME/work/ad-tech/") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
 alias ffd='_fzf_search_directory'
 alias ffh='_fzf_search_history'
 alias ffp='_fzf_search_processes'
 
 alias gs='git status'
+alias gsw='git switch -'
 alias gc='git_commit_or_git_checkout'
+alias gco='git checkout'
 alias gpl='git pull'
 alias gp='git push'
 alias gl='sh ~/.dotfiles/scripts/.config/scripts/git_log.sh -i'
@@ -71,6 +73,7 @@ alias gtp='~/.dotfiles/scripts/.config/scripts/increment_tag_push.sh'
 alias jq='jq -C'
 alias jwt='~/.dotfiles/scripts/.config/scripts/decode_jwt.sh'
 alias l='exa -hl'
+alias la='exa -hla'
 alias lt='exa --tree'
 alias less='bat --paging=always'
 alias task='go-task'
@@ -86,6 +89,8 @@ alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 alias vim='/usr/sbin/nvim'
 alias v='vv'
 alias vv='/usr/sbin/nvim . -c "Codeium Disable"'
+
+alias z='zellij'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
