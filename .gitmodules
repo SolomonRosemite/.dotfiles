@@ -4,6 +4,3 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:SolomonRosemite/nvim.git
-[submodule "ssh.dotfiles"]
-	path = ssh.dotfiles
-	url = git@github.com:SolomonRosemite/ssh.dotfiles.git
