@@ -5,7 +5,7 @@
   path = ~/dev/.gitconfig-personal
 [includeIf "gitdir:~/.config/nvim/"]
   path = ~/dev/.gitconfig-personal
-[includeIf "gitdir:/mnt/c/Users/*/*win.dotfiles/"]
+[includeIf "gitdir:/mnt/c/Users/*/"]
   path = ~/dev/.gitconfig-personal
 
 # Because of the way go get works, we also need to set this in the global gitconfig
@@ -25,3 +25,8 @@
 
 [push]
   autoSetupRemote = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
