@@ -4,7 +4,7 @@ end
 
 set win_user_path (readlink -e /mnt/c/Users/{solomon,Jesse}/ | head -1)
 set h $win_user_path
-set hd $win_user_path
+set hd "$win_user_path/Donwloads"
 
 # Open configurations
 alias c.='n. && vim . && cd -'
@@ -22,6 +22,7 @@ alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
 alias nk="cd $win_user_path/.config/komorebi/"
 alias nw="cd $win_user_path/.win.dotfiles/"
+alias nd="cd /mnt/c/Users/Jesse/Pictures/Walli/.drawings"
 alias nws="cd $win_user_path/AppData/Roaming/Microsoft/Windows/Start\ Menu/Programs/Startup/"
 alias ny="cd $win_user_path/.yasb/"
 
@@ -41,7 +42,7 @@ alias dv='docker volume'
 alias dvl='docker volume ls'
 alias dvr='docker volume rm'
 
-alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/personal" "$HOME/dev" "$HOME/work/common/" "$HOME/work/ad-tech/") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
+alias cc='cd (~/.dotfiles/scripts/.config/scripts/open_dir.sh "$HOME/personal" "$HOME/dev" "$HOME/work/services/" "$HOME/work/common/" "$HOME/work/ad-tech/") && [ -f package.json ] || cd src > /dev/null 2>&1 || true'
 
 alias ffd='_fzf_search_directory'
 alias ffh='_fzf_search_history'
@@ -70,7 +71,6 @@ alias clip='utf8clip.exe'
 alias fj='~/.dotfiles/scripts/.config/scripts/format_json.sh'
 alias grep='rg'
 alias gtp='~/.dotfiles/scripts/.config/scripts/increment_tag_push.sh'
-alias jq='jq -C'
 alias jwt='~/.dotfiles/scripts/.config/scripts/decode_jwt.sh'
 alias l='exa -hl'
 alias la='exa -hla'
@@ -86,11 +86,13 @@ alias hd="cd $win_user_path/Downloads"
 alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
-alias vim='/usr/sbin/nvim'
-alias v='vv'
+alias v='/usr/sbin/nvim .'
 alias vv='/usr/sbin/nvim . -c "Codeium Disable"'
 
-alias z='zellij'
+alias wts="sh $win_user_path/.win.dotfiles/scripts/win-terminal-background.sh --select"
+
+alias za='zellij attach -c'
+alias ze='zellij'
 
 set fish_greeting ""
 set fish_user_paths "$HOME/.nix-profile/bin/" $fish_user_paths
