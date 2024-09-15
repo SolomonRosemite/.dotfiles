@@ -7,16 +7,16 @@ set h $win_user_path
 set hd "$win_user_path/Donwloads"
 
 # Open configurations
-alias c.='n. && vim . && cd -'
-alias cb='vim ~/.config/bat/config'
-alias cf='vim ~/.config/fish/config.fish'
-alias cs='vim ~/.config/starship.toml'
-alias cn='nn && vim . && cd -'
-alias ck='nk && vim . && cd -'
-alias ct="vim $win_user_path/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json"
-alias cw='nw && vim . && cd -'
-alias cws='nws && vim . && cd -'
-alias cy='ny && vim . && cd -'
+alias c.='n. && nvim . && cd -'
+alias cb='nvim ~/.config/bat/config'
+alias cf='nvim ~/.config/fish/config.fish'
+alias cs='nvim ~/.config/starship.toml'
+alias cn='nn && nvim . && cd -'
+alias ck='nk && nvim . && cd -'
+alias ct="nvim $win_user_path/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json"
+alias cw='nw && nvim . && cd -'
+alias cws='nws && nvim . && cd -'
+alias cy='ny && nvim . && cd -'
 
 alias n.='cd ~/.dotfiles/'
 alias nn='cd ~/.dotfiles/nvim/.config/nvim/'
