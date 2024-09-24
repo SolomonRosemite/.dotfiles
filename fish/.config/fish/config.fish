@@ -86,8 +86,8 @@ alias hd="cd $win_user_path/Downloads"
 alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
-alias v='/usr/sbin/nvim . -c "Oil ."'
-alias vv='/usr/sbin/nvim . -c "Oil ." -c "Codeium Disable"'
+alias v='/usr/sbin/nvim -c "Oil ."'
+alias vv='/usr/sbin/nvim -c "Oil ." -c "Codeium Disable"'
 
 alias wts="sh $win_user_path/.win.dotfiles/scripts/win-terminal-background.sh --select"
 
