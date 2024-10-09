@@ -77,6 +77,7 @@ alias la='exa -hla'
 alias lt='exa --tree'
 alias less='bat --paging=always'
 alias task='go-task'
+alias vim='/usr/sbin/nvim'
 
 alias nvm='fnm'
 alias r='trash'
@@ -86,8 +87,8 @@ alias hd="cd $win_user_path/Downloads"
 alias s='source ~/.config/fish/config.fish'
 alias take 'function __take; mkdir -p $argv; cd $argv; end; __take'
 
-alias v='/usr/sbin/nvim -c "Oil ."'
-alias vv='/usr/sbin/nvim -c "Oil ." -c "Codeium Disable"'
+alias v='/usr/sbin/nvim .'
+alias vv='/usr/sbin/nvim -c "Codeium Disable" .'
 
 alias wts="sh $win_user_path/.win.dotfiles/scripts/win-terminal-background.sh --select"
 
@@ -114,6 +115,7 @@ starship init fish | source
 source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 bash -c 'syncthing &>/dev/null &'
 export FZF_DEFAULT_OPTS='--layout=reverse'
+export (grep . ~/.aireal.env)
 
 # functions
 function git_commit_or_git_checkout
